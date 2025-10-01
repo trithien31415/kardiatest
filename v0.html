@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kardia Labs Limited - Emerging Technology Innovation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: #1a1a1a;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+            color: white;
+            padding: 150px 2rem 100px;
+            text-align: center;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            margin: 2rem auto 0;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.5);
+            font-size: 1.2rem;
+            border: 2px dashed rgba(255,255,255,0.3);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+            opacity: 0.95;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            background: white;
+            color: #1a1a1a;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            font-weight: 600;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            background: #f0f0f0;
+        }
+
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: #1a1a1a;
+        }
+
+        .about {
+            background: #f8f9fa;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .stat-card h3 {
+            color: #1a1a1a;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card p {
+            color: #666;
+        }
+
+        .mission-text {
+            text-align: center;
+            max-width: 800px;
+            margin: 2rem auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .product-card {
+            padding: 2rem;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 200px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 0.9rem;
+            border: 2px dashed #ddd;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .product-card h3 {
+            color: #1a1a1a;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .clients {
+            background: #f8f9fa;
+        }
+
+        .client-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .client-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .client-logo {
+            width: 100%;
+            height: 120px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+            font-size: 0.9rem;
+            border: 2px dashed #e0e0e0;
+        }
+
+        .client-card h3 {
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact {
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-top: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-info p {
+            margin: 1rem 0;
+        }
+
+        .contact-info strong {
+            color: #1a1a1a;
+        }
+
+        .contact-info a {
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #333;
+        }
+
+        .contact-info a:hover {
+            color: #000;
+            border-bottom-color: #000;
+        }
+
+        footer {
+            background: #2d3748;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .tagline {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Kardia Labs</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#technology">Technology</a></li>
+                <li><a href="#clients">Clients</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Kardia Labs Limited</h1>
+        <p class="tagline">"Make AI-powered applications universally accessible through scalable, interoperable technology"</p>
+        <p>Pioneering the future of distributed AI and emerging technology solutions</p>
+        <div class="hero-image">[Hero Image - Team/Office/Technology]</div>
+        <a href="#contact" class="cta-button">Get in Touch</a>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <div class="about-content">
+            <div class="stat-card">
+                <h3>2020</h3>
+                <p>Founded in Ho Chi Minh City</p>
+            </div>
+            <div class="stat-card">
+                <h3>20+</h3>
+                <p>Team Members Worldwide</p>
+            </div>
+            <div class="stat-card">
+                <h3>$2M</h3>
+                <p>Capital Investment</p>
+            </div>
+            <div class="stat-card">
+                <h3>Global</h3>
+                <p>Enterprise Partnerships</p>
+            </div>
+        </div>
+        <div class="mission-text">
+            <p>Kardia Labs Limited is an emerging technology company focused on developing cutting-edge AI infrastructure and distributed computing solutions. We build scalable platforms that enable organizations to harness the power of artificial intelligence and next-generation technology.</p>
+            <p style="margin-top: 1.5rem;">Our team combines deep expertise in distributed systems, machine learning, and enterprise software to deliver innovative solutions that drive digital transformation across industries.</p>
+        </div>
+    </section>
+
+    <section id="technology">
+        <h2>Our Technology</h2>
+        <div class="products-grid">
+            <div class="product-card">
+                <div class="product-image">[AI Platform Image]</div>
+                <h3>Multi-AI Agent Platform</h3>
+                <p>Advanced collaborative AI system enabling multiple intelligent agents to work together seamlessly. Features include automated workflows, 3D model generation, and intelligent task delegation for complex problem-solving.</p>
+            </div>
+            <div class="product-card">
+                <div class="product-image">[Computing Infrastructure Image]</div>
+                <h3>Distributed Computing Infrastructure</h3>
+                <p>High-performance distributed system with tokenized GPU capabilities, supporting 6,000+ operations per second with sub-2 second response times. Built for enterprise-scale AI workloads.</p>
+            </div>
+            <div class="product-card">
+                <div class="product-image">[Integration Platform Image]</div>
+                <h3>Cross-Platform Integration</h3>
+                <p>Proprietary integration layer enabling seamless data and asset transfer across multiple platforms and computing environments, connecting AI compute resources with business applications.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="clients" class="clients">
+        <h2>Client Success Stories</h2>
+        <div class="client-grid">
+            <div class="client-card">
+                <div class="client-logo">[Da Nang Logo]</div>
+                <h3>Smart City Initiative</h3>
+                <p>Partnered with Da Nang to develop Southeast Asia's first large-scale public digital infrastructure, serving smart city development, digital finance, and e-Government platforms.</p>
+                <p><a href="https://vov.vn/kinh-te/phat-trien-kinh-te-so-da-nang-y-tuong-ve-mang-blockchain-post1037374.vov" target="_blank" style="color: #333; text-decoration: none; font-weight: 600; border-bottom: 1px solid #333;">Learn More →</a></p>
+            </div>
+            <div class="client-card">
+                <div class="client-logo">[LG CNS Logo]</div>
+                <h3>LG CNS Partnership</h3>
+                <p>Collaboration with the IT division of LG Corporation, bringing enterprise-grade technology solutions and opening pathways for joint infrastructure deployments.</p>
+            </div>
+            <div class="client-card">
+                <div class="client-logo">[Weepaz Logo]</div>
+                <h3>Enterprise Metaverse</h3>
+                <p>Developed Weepaz platform for workforce management, enabling companies to track employee engagement, manage perks, and coordinate internal events in virtual environments.</p>
+                <p><a href="https://apps.apple.com/us/app/weepaz/id1637617741" target="_blank" style="color: #333; text-decoration: none; font-weight: 600; border-bottom: 1px solid #333;">View App →</a></p>
+            </div>
+            <div class="client-card">
+                <div class="client-logo">[Geleximco Logo]</div>
+                <h3>Industrial Conglomerate</h3>
+                <p>Co-founded R&D center with Geleximco to deploy technology solutions across real estate, finance, and manufacturing divisions.</p>
+            </div>
+            <div class="client-card">
+                <div class="client-logo">[Raramuri Logo]</div>
+                <h3>Sports & Fitness Platform</h3>
+                <p>Created Raramuri virtual marathon platform for running enthusiasts, enabling them to stream activities into virtual spaces with live rankings and real-time interactions.</p>
+                <p><a href="https://raramuri.io" target="_blank" style="color: #333; text-decoration: none; font-weight: 600; border-bottom: 1px solid #333;">Explore Raramuri →</a></p>
+            </div>
+            <div class="client-card">
+                <div class="client-logo">[ORTHO Logo]</div>
+                <h3>Digital Fashion</h3>
+                <p>Technology partner for ORTHO digital fashion house, enabling secure authentication and ownership verification for physical and digital fashion items.</p>
+                <p><a href="https://ortho.fashion" target="_blank" style="color: #333; text-decoration: none; font-weight: 600; border-bottom: 1px solid #333;">Visit ORTHO →</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <p><strong>Phone:</strong> +84 (28) 7307 1234</p>
+            <p><strong>Head Office:</strong><br>
+            46F, Bitexco Financial Tower<br>
+            02 Hai Trieu Street, District 1<br>
+            Ho Chi Minh City, Vietnam</p>
+            <p><strong>General Inquiries:</strong> <a href="mailto:info@kardialabs.vn">info@kardialabs.vn</a></p>
+            <p><strong>Business Development:</strong> <a href="mailto:business@kardialabs.vn">business@kardialabs.vn</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Kardia Labs Limited. All rights reserved.</p>
+    </footer>
+</body>
+</html>
